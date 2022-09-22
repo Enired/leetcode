@@ -45,13 +45,30 @@ const reverseWords = (str) => {
   return newStr
 
 };
+////////////////
+// Solution 2 //
+////////////////
+
+const newReverseWords = (str) => {
+  let reverseStr = ''
+  for(const char of str){
+    reverseStr = `${char}${reverseStr}`
+  }
+
+  const reversedWords = reverseStr.split(' ').reverse().join(' ')
+  return reversedWords
+}
 
 console.log('/////////////////')
 console.log('// Problem 557 //')
 console.log('/////////////////\n')
 
-//Brute Force
+// Brute Force
 console.log(reverseWords('Let\'s take LeetCode contest'));
 console.log(reverseWords('God Ding'));
+
+// Other Approach
+console.log(newReverseWords('Let\'s take LeetCode contest'));
+console.log(newReverseWords('God Ding'));
 
 console.log('\n/////////////////')
