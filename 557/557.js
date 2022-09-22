@@ -46,5 +46,12 @@ const reverseWords = (str) => {
 
 };
 
+console.log('/////////////////')
+console.log('// Problem 557 //')
+console.log('/////////////////\n')
+
+//Brute Force
 console.log(reverseWords('Let\'s take LeetCode contest'));
 console.log(reverseWords('God Ding'));
+
+console.log('\n/////////////////')
