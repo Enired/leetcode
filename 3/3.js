@@ -45,17 +45,16 @@ const lengthOfLongestSubstring = (s) => {
   let substring = '';
   for (const char of s) {
     if (!substring.includes(char)) {
-      substring += char
-      if(ans < substring.length){
-        ans = substring.length
+      substring += char;
+      if (ans < substring.length) {
+      ans = substring.length;
       }
     }
     else {
-      substring = char
+      substring = substring.slice(substring.indexOf(char) + 1);
+      substring += char;
     }
-
   }
-
   return ans;
 };
 
@@ -64,5 +63,6 @@ console.log('Answer should be abc with a length of 3\n');
 console.log(lengthOfLongestSubstring('bbbbb'));
 console.log('Answer should be b with a length of 1\n');
 console.log(lengthOfLongestSubstring('pwwkew'));
-console.log('Answer should be abc with a length of 3\n')
-
+console.log('Answer should be abc with a length of 3\n');
+console.log(lengthOfLongestSubstring('dvdf'));
+console.log('Answer should be vdf with a length of 3\n');
