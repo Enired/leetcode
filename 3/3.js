@@ -10,7 +10,7 @@
 // Share
 // Given a string s, find the length of the longest substring without repeating characters.
 
- 
+
 
 // Example 1:
 
@@ -28,7 +28,7 @@
 // Output: 3
 // Explanation: The answer is "wke", with the length of 3.
 // Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
- 
+
 
 // Constraints:
 
@@ -40,8 +40,29 @@
  * @return {number}
  */
 
- const lengthOfLongestSubstring = (str) => {
-   let ans = '' //The substring
-   
-   return ans
+const lengthOfLongestSubstring = (s) => {
+  let ans = 0; //The substring length
+  let substring = '';
+  for (const char of s) {
+    if (!substring.includes(char)) {
+      substring += char
+      if(ans < substring.length){
+        ans = substring.length
+      }
+    }
+    else {
+      substring = char
+    }
+
+  }
+
+  return ans;
 };
+
+console.log(lengthOfLongestSubstring('abcabcbb'));
+console.log('Answer should be abc with a length of 3\n');
+console.log(lengthOfLongestSubstring('bbbbb'));
+console.log('Answer should be b with a length of 1\n');
+console.log(lengthOfLongestSubstring('pwwkew'));
+console.log('Answer should be abc with a length of 3\n')
+
