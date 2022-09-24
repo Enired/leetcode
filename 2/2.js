@@ -38,6 +38,19 @@
  * @param {ListNode} l2
  * @return {ListNode}
  */
- var addTwoNumbers = function(l1, l2) {
-  console.log(l1)
+ const addTwoNumbers = (l1, l2) => {
+  //Reverse each list'
+  //concat all items in the list
+  // add the lists together
+  // convert each number to list
+  // reverse the list
+
+
+  
 };
+
+l1 = [2,4,3]
+l2 = [5,6,4]
+
+console.log('Expected Answer = 807')
+console.log('Functions\'s Answer = ', addTwoNumbers(l1,l2))
