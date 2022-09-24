@@ -47,12 +47,45 @@
   // volume = length x height
   // return the volume
 
-  let left;
-  let right;
-  let volume = left * right
+  let leftValue = 0;
+  let rightValue = 0;
+  let containerHeight = 0;
+  let containerLength = 0;
+  let volume = 0
+  let newEstVolume = 0;
+  let indexLeft = 0
+  let indexRight = height.length - 1
 
-  return volume
+  while(indexLeft < indexRight){
+    //Determining height of container
+    leftValue < rightValue ? containerHeight = leftValue : containerHeight = rightValue;
+
+    //Determining length of container
+    containerLength = indexRight - indexLeft;
+
+    //Determining volume
+    newEstVolume = containerHeight * containerLength;
+  }
 
 
-    
+
+
+  // console.log(height.length)
+  // //Left side 
+  // for(let i=0; i < height.length; i++){
+  //   left = height[i];
+  //   indexLeft = i
+  // }
+
+  // for(let i=height.length - 1; i >= 0; i--){
+  //   right = height[i]
+  //   indexRight = i
+  // }
+  
+  
+  // let volume = left * right
+  // console.log(volume)
+  // return
 };
+
+console.log(maxArea([1,8,6,2,5,4,8,3,7]));
