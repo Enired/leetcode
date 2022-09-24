@@ -41,6 +41,7 @@
  * @return {number}
  */
  const maxArea = (height) => { //height is an array
+
   // length of container  = index of right - index of left
   // height of container = lowest value between right and left
   // volume = length x height
@@ -69,15 +70,12 @@
 
     //Shifting index
     if(newEstVolume < volume){
-      indexLeft++
+      leftValue < rightValue ? indexLeft++ : indexRight --
     }
     else{
-      console.log('newestvol', newEstVolume)
-      console.log('')
       volume = newEstVolume
-      indexLeft++
+      leftValue < rightValue ? indexLeft++ : indexRight --
     }
-
   }
 
   return volume
