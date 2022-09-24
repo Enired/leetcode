@@ -2,7 +2,7 @@
 
 // You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 
- 
+
 
 // Example 1:
 
@@ -18,7 +18,7 @@
 
 // Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
 // Output: [8,9,9,9,0,0,0,1]
- 
+
 
 // Constraints:
 
@@ -38,19 +38,23 @@
  * @param {ListNode} l2
  * @return {ListNode}
  */
- const addTwoNumbers = (l1, l2) => {
+const addTwoNumbers = (l1, l2) => {
   //Reverse each list'
   //concat all items in the list
   // add the lists together
   // convert each number to list
   // reverse the list
 
+  const valOne = parseInt(l1.reverse().join(''));
+  const valTwo = parseInt(l2.reverse().join(''));
 
-  
+  const total = valOne + valTwo;
+  const returnedArray = Array.from(String(total), Number).reverse();
+  return returnedArray;
 };
 
-l1 = [2,4,3]
-l2 = [5,6,4]
+l1 = [2, 4, 3];
+l2 = [5, 6, 4];
 
-console.log('Expected Answer = 807')
-console.log('Functions\'s Answer = ', addTwoNumbers(l1,l2))
+console.log('Expected Answer = [7,0,8]');
+console.log('Functions\'s Answer = ', addTwoNumbers(l1, l2));
