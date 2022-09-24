@@ -41,7 +41,6 @@
  * @return {number}
  */
  const maxArea = (height) => { //height is an array
-  //Probably want to do binary search. Left and right of array
   // length of container  = index of right - index of left
   // height of container = lowest value between right and left
   // volume = length x height
@@ -58,34 +57,30 @@
 
   while(indexLeft < indexRight){
     //Determining height of container
-    leftValue < rightValue ? containerHeight = leftValue : containerHeight = rightValue;
-
+    leftValue = height[indexLeft]
+    rightValue = height[indexRight]
+    leftValue < rightValue ? containerHeight = leftValue : containerHeight = rightValue;    
+    
     //Determining length of container
     containerLength = indexRight - indexLeft;
-
+    
     //Determining volume
     newEstVolume = containerHeight * containerLength;
+
+    //Shifting index
+    if(newEstVolume < volume){
+      indexLeft++
+    }
+    else{
+      console.log('newestvol', newEstVolume)
+      console.log('')
+      volume = newEstVolume
+      indexLeft++
+    }
+
   }
 
-
-
-
-  // console.log(height.length)
-  // //Left side 
-  // for(let i=0; i < height.length; i++){
-  //   left = height[i];
-  //   indexLeft = i
-  // }
-
-  // for(let i=height.length - 1; i >= 0; i--){
-  //   right = height[i]
-  //   indexRight = i
-  // }
-  
-  
-  // let volume = left * right
-  // console.log(volume)
-  // return
+  return volume
 };
 
-console.log(maxArea([1,8,6,2,5,4,8,3,7]));
+console.log(maxArea([2,3,4,5,18,17,6]));
