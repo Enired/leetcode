@@ -80,8 +80,8 @@ const addTwoNumbers = (l1, l2) => {
   // return returnedArray;
 };
 
-l1 = [2, 4, 3];
-l2 = [5, 6, 4];
+// l1 = [2, 4, 3];
+// l2 = [5, 6, 4];
 
-console.log('Expected Answer = [7,0,8]');
-console.log('Functions\'s Answer = ', addTwoNumbers(l1, l2));
+// console.log('Expected Answer = [7,0,8]');
+// console.log('Functions\'s Answer = ', addTwoNumbers(l1, l2));
