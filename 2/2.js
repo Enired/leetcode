@@ -37,7 +37,14 @@
  * @param {ListNode} l1
  * @param {ListNode} l2
  * @return {ListNode}
+ * 
  */
+
+function ListNode(val, next) {
+  this.val = (val === undefined ? 0 : val);
+  this.next = (next === undefined ? null : next);
+}
+
 const addTwoNumbers = (l1, l2) => {
   //Reverse each list'
   //concat all items in the list
@@ -45,12 +52,32 @@ const addTwoNumbers = (l1, l2) => {
   // convert each number to list
   // reverse the list
 
-  const valOne = parseInt(l1.reverse().join(''));
-  const valTwo = parseInt(l2.reverse().join(''));
 
-  const total = valOne + valTwo;
-  const returnedArray = Array.from(String(total), Number).reverse();
-  return returnedArray;
+  const head = new ListNode();
+  let tail = head
+  let carry = 0;
+
+  while(l1 || l2 || carry){
+    const valueOne = l1 ? l1.val : 0;
+    const valueTwo = l2 ? l2.val : 0;
+    const total = valueOne + valueTwo + carry
+
+    tail.next = new ListNode(total%10);
+    tail = tail.next
+    carry = total >= 10 ? 1 : 0;
+    l1 = l1 && l1.next
+    l2 = l2 && l2.next
+  }
+
+  return head.next;
+
+
+  // const valOne = parseInt(l1.reverse().join(''));
+  // const valTwo = parseInt(l2.reverse().join(''));
+
+  // const total = valOne + valTwo;
+  // const returnedArray = Array.from(String(total), Number).reverse();
+  // return returnedArray;
 };
 
 l1 = [2, 4, 3];
