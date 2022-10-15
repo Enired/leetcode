@@ -5,18 +5,18 @@ const compare = (selectorOne, selectorTwo) => {
     let value = 0;
     tags.forEach(element => {
       if (element[0] === '.') {
-        value += 10;
+        value += (element.match(/./).length * 10);
       }
       else if (element[0] === '#') {
         value += 100;
         if(element.includes('.')){
-          value += 10;
+          value += (element.match(/./).length * 10);
         }
       }
       else if(element[0] !== '*'){
         value += 1;
         if(element.includes('.')){
-          value += 10;
+          value += (element.match(/./).length * 10);
         }
         if(element.includes('#')){
           value += 100;
@@ -27,6 +27,8 @@ const compare = (selectorOne, selectorTwo) => {
   };
   let selectorOneValues = valueDeterminer(selectorOneTags);
   let selectorTwoValues = valueDeterminer(selectorTwoTags);
+  // console.log('Testing', selectorOne ,selectorOneValues)
+  // console.log('Testing', selectorTwo, selectorTwoValues)
   return selectorOneValues > selectorTwoValues ? selectorOne : selectorTwo
 };
 
