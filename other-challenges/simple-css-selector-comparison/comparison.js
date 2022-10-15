@@ -1,8 +1,6 @@
 const compare = (selectorOne, selectorTwo) => {
-  
   const selectorOneTags = selectorOne.split(' ');
   const selectorTwoTags = selectorTwo.split(' ');
-  
   const valueDeterminer = (tags) => {
     let value = 0;
     tags.forEach(element => {
@@ -27,14 +25,9 @@ const compare = (selectorOne, selectorTwo) => {
     })
     return value;
   };
-  
   let selectorOneValues = valueDeterminer(selectorOneTags);
   let selectorTwoValues = valueDeterminer(selectorTwoTags);
-
   return selectorOneValues > selectorTwoValues ? selectorOne : selectorTwo
-
-
-
 };
 
 
