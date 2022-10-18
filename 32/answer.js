@@ -3,27 +3,31 @@
  * @return {number}
  */
 const longestValidParentheses = (s) => {
-  let currentCount = []
-  let highest = 0;
+  const stack = [-1];
+  let maxlength = 0;
 
-  for(let i=0; i < s.length; i++){
-    if(s[i] === '('){
-      if(s[i+1] === ')'){
-        currentCount.push(s[i])
-        currentCount.push(s[i+1])
-        highest = currentCount.length;
-      }
+  for(let i = 0; i < s.length; i++){
+    if(s[i]=== '('){
+      stack.push(i);
     }
-    else if(s[i] === ')'){
-      if(s[i+1] !== '('){
-        currentCount = [];
+    else if(s[i]===')'){
+      stack.pop()
+      if(stack.length === 0){
+        stack.push(i);
+      }
+      else{
+        maxlength = i - stack[stack.length-1];
       }
     }
   }
-  return highest
+
+  return maxlength
+
 };
 
 const s1 = "(()"
 const s2 = ")()())"
 const s3 = ""
-console.log(longestValidParentheses(s3));
+const s4 = "()(())"
+const s5 = "(()))())("
+console.log(longestValidParentheses(s5));
