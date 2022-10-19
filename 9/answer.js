@@ -3,16 +3,20 @@
  * @return {boolean}
  */
 const isPalindrome = (x) => {
-  if (x < 0) {
-    return false;
-  }
+  return x >= 0 & parseInt(x.toString().split('').reverse().join('')) === x ? true : false 
 
-  let revNum = x.toString().split('').reverse().join('');
-  if (parseInt(revNum) !== x) {
-    return false;
-  }
 
-  return true;
+  // Attempt 1
+  // if (x < 0) {
+  //   return false;
+  // }
+
+  // let revNum = x.toString().split('').reverse().join('');
+  // if (parseInt(revNum) !== x) {
+  //   return false;
+  // }
+
+  // return true;
 };
 
 const num1 = 121;
